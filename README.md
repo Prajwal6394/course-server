@@ -1,1 +1,1 @@
-# courese-server
+# course-server
