@@ -1,11 +1,9 @@
 const mongoose = require('mongoose');
 const config = require('../config/config-detail')
-// DONT MISUSE THIS THANKYOU!!
+
 const connectionString = 'mongodb+srv://ragnor:m2dyllfMRXVShlz5@cluster0.ygjpbsy.mongodb.net/';
 
-console.log(`this is connection string ${config.mongoURI} and this is the dateType `, typeof config.mongoURI)
-
-mongoose.connect(connectionString, {
+mongoose.connect( config.mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   dbName: 'courses',
