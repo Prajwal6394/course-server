@@ -7,6 +7,14 @@ const SECRET = 'SECr3t'; // This should be in an environment variable in a real 
 
 const router = express.Router();
 
+router.get("/me", authenticateJwt, async (req, res) => {
+  const admin = await Admin.findOne({username: req.user.username});
+
+  res.json({
+    username: admin.username
+  })
+} )
+
 router.post('/signup', (req, res) => {
   const { username, password } = req.body;
   function callback(admin) {
